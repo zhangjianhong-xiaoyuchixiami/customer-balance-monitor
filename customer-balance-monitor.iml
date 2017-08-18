@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/workspaces/mybatis-3.2.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../mybatis-3.2.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/workspaces/mysql-connector-java-5.1.39.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../mysql-connector-java-5.1.39.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -38,6 +38,42 @@
       <library>
         <CLASSES>
           <root url="jar://E:/workspaces1/mysql-connector-java-5.1.39.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://E:/工作资料/mybatis-3.2.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://E:/工作资料/mysql-connector-java-5.1.39.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://E:/工作资料/commons-email-1.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://E:/工作资料/mail-1.4.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -15,6 +15,6 @@
     </environments>
 
     <mappers>
-        <mapper resource="org/qydata/mapper/ApiCostMapper.xml"/>
+        <mapper resource="org/qydata/mapper/ApiBanMapper.xml"/>
     </mappers>
 </configuration>

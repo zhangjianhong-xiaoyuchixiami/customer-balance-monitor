@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/api-cost-day-count.iml" filepath="$PROJECT_DIR$/api-cost-day-count.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customer-balance-monitor.iml" filepath="$PROJECT_DIR$/customer-balance-monitor.iml" />
     </modules>
   </component>
 </project>

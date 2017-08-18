@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.qydata.mapper.ApiBanMapper">
+
+    <resultMap id="queryCompanyExtMap" type="org.qydata.po.PrepayVendor">
+        <result column="id" property="id"/>
+        <result column="companyId" property="companyId"/>
+        <result column="isPrepay" property="isPrepay"/>
+        <result column="isSendOpposite" property="isSendOpposite"/>
+    </resultMap>
+
+    <select id="queryCompanyExt" resultMap="queryCompanyExtMap">
+       SELECT a.id,a.companyId,a.isPrepay,a.isSendOpposite,a.ahead
+       FROM qyfinance.CompanyExt a
+    </select>
+
+
+
+    <select id="queryApiIdByVendorId" parameterType="int" resultMap="queryPrepayVendorMap">
+        SELECT a.id apiId,a.cost
+        FROM qydata.Api a
+        WHERE a.vendorId = #{param}
+    </select>
+
+    <select id="queryCostAmount" parameterType="int" resultType="int">
+        SELECT COUNT(a.id)
+        FROM qydata.ApiRequestLog a
+        LEFT JOIN qydata.ApiResponseLog b ON a.id = b.requestLogId
+        WHERE a.apiId = #{param}
+        AND b.cost > 0
+        AND b.ok = 1
+        AND b.isMock = 0
+    </select>
+    
+    <select id="queryAvgeConsume" parameterType="int" resultType="double">
+        SELECT sum(a.totleCost/100.0)/count(a.totleCost)
+        FROM qyfinance.ApiCostDayCount a
+        WHERE a.apiId = #{param}
+    </select>
+
+    <select id="querySendFlag" parameterType="map" resultType="int">
+        SELECT sendFlag
+        FROM qyfinance.ApiVendorMonitor
+        WHERE vendorId = #{vid} AND balance = #{bal}
+    </select>
+
+    <insert id="insertSendFlag" parameterType="map">
+        INSERT INTO qyfinance.ApiVendorMonitor(vendorId,balance,sendFlag)
+        VALUES(#{vid},#{bal},#{flag})
+    </insert>
+
+    <update id="updateSendFlag" parameterType="map">
+        UPDATE qyfinance.ApiVendorMonitor SET sendFlag = #{flag}
+        WHERE vendorId = #{vid} AND balance = #{bal}
+    </update>
+
+</mapper>
